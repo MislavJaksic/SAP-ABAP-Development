@@ -1,0 +1,19 @@
+Access heterogenous structure or table:
+form write_table using itab type any table.
+  field-symbols: <line>  type any.
+                 <field> type any.
+  loop at itab assigning <line>.
+    do.
+      assign component sy-index of structure <line> to <field>.
+      if sy-subrc <> 0.
+        exit.
+
+
+Create table with dynamic type:
+data tableref ref to data.
+field-symbols <table> type any table.
+create data tabref type table of (table).
+assign tabref->* to <table>.
+
+Fill dynamic type table with data:
+... into table <table> ...
