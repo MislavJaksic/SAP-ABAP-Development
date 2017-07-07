@@ -1,3 +1,5 @@
+*Given a number returns 1 if the number is prime
+*and 0 if it is not
 *Very slow, but memory efficient
 FORM is_prime USING value(number) TYPE p
                     boolean_prime TYPE i.

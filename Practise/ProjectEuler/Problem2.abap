@@ -1,16 +1,19 @@
 *Project Euler, Problem 2
+*Given max_fib writes out the sum of all even
+*fibonacci numbers that are less then max_fib
 FORM even_fibonacci USING max_fib TYPE i.
   DATA n_minus_one TYPE i VALUE 1.
   DATA n_minus_two TYPE i VALUE 1.
   DATA fib TYPE i.
   DATA boolean_div TYPE i.
   DATA sum_of_even TYPE i.
+  
+  IF max_fib < 1.
+    EXIT.
+    ENFIF.
 
   DO.
     fib = n_minus_one + n_minus_two.
-    WRITE / sy-index.
-    WRITE 'fibonacci is:'.
-    WRITE fib.
     IF fib > max_fib.
       EXIT.
     ENDIF.

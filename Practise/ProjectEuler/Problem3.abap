@@ -1,23 +1,25 @@
 *Project Euler, Problem 3
+*Given a number returns a table of factors
 DATA primes TYPE STANDARD TABLE OF i.
+
 FORM number_to_primes USING value(number) TYPE p
                          table LIKE primes.
-  DATA divider TYPE i VALUE 2.
+  DATA divisor TYPE i VALUE 2.
   DATA boolean_div TYPE i.
   WRITE / 'Prime factors of'.
   WRITE number.
   WRITE 'are:'.
   DO.
-    IF divider > number.
+    IF divisor > number.
       EXIT.
       ENDIF.
-    boolean_div = number MOD divider.
+    boolean_div = number MOD divisor.
     IF boolean_div = 0.
-      APPEND divider TO table.
-      WRITE divider.
-      number = number / divider.
+      APPEND divisor TO table.
+      WRITE divisor.
+      number = number / divisor.
     ELSE.
-      divider = divider + 1.
+      divisor = divisor + 1.
       ENDIF.
     ENDDO.
   ENDFORM.

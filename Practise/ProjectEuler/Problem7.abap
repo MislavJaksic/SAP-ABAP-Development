@@ -1,4 +1,5 @@
 *Project Euler, Problem 7
+*Given n writes out the nth prime
 FORM find_nth_prime USING n TYPE i.
   DATA prime_counter TYPE i VALUE 0.
   DATA number TYPE p VALUE 0.

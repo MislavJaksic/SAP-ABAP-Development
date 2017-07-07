@@ -1,3 +1,6 @@
+*Given a table returns a table with value pairs where
+*the key is a number and the value is the number of
+*times the key number occures in the table
 TYPES: BEGIN OF key_value,
            key TYPE i,
            value TYPE i,

@@ -1,4 +1,7 @@
 *Project Euler, Problem 5
+*Given max writes out a table of prime number which when
+*multiplied together produce a number that is divisible
+*without the remainder by all numbers from 1 to max
 FORM evenly_divisible USING max TYPE i.
   DATA number_constructor TYPE HASHED TABLE OF key_value WITH UNIQUE KEY key.
   DATA count_table TYPE HASHED TABLE OF key_value WITH UNIQUE KEY key.
@@ -28,6 +31,7 @@ FORM evenly_divisible USING max TYPE i.
         ENDIF.
       ENDLOOP.
     ENDDO.
+  
   WRITE / 'Contents of number_constructor:'.
   LOOP AT number_constructor INTO constructor_entry.
     WRITE / 'Key:'.

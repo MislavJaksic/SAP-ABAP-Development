@@ -1,4 +1,6 @@
 *Project Euler, Problem 8
+*Given n_of_adjacent and huge_number writes out the largest product of
+*n_of_adjacent adjacent digits in a huge_number
 FORM max_adjacent_digits_product USING n_of_adjacent TYPE i
                                        huge_number TYPE string.
   DATA length TYPE i.

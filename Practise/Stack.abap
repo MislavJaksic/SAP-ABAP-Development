@@ -1,3 +1,8 @@
+*Stack data structure implementation
+*Can only accept integers
+*Use push to put the data on top, pop to get data from the top
+*Use top to check what number is on top of the stack
+*If an operation cannot be executed, a sentinel value is returned
 CLASS stack DEFINITION.
   PUBLIC SECTION.
   METHODS: pop RETURNING value(ret_number) TYPE i,

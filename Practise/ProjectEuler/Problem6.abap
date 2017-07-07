@@ -1,4 +1,6 @@
 *Project Euler, Problem 6
+*Given max writes out the sum of squares
+*and square of sum
 FORM sum_squares_square_sum USING max TYPE i.
   DATA sum_of_squares TYPE p VALUE 0.
   DATA square_of_sum TYPE p VALUE 0.

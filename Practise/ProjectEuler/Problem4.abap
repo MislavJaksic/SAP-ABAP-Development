@@ -1,28 +1,33 @@
 *Project Euler, Problem 4, the most complex and interesting so far
-*solved in O(n) time
-FORM largest_palindrome_product USING digit_number TYPE i.
-  IF digit_number < 1.
+*Given digits writes out the largest palindrome number
+*that is a product of two digits digit numbers
+*Solved in O(n) time
+*1 digit product table where element the 1. is the largest product
+*2. is the second largest and so on. The same pattern holds true
+*for higher digit product tables
+*  9  8  7  6  5  4 : i-nner
+*9 1. 2. 4. 6. 9.
+*8    3. 5. 8.
+*7       7. ...
+*:
+*o-uter
+FORM largest_palindrome_product USING digits TYPE i.
+  IF digits < 1.
     WRITE / 'Too few digits'.
     EXIT.
     ENDIF.
 
   DATA minimum TYPE i VALUE 1.
   DATA maximum TYPE i VALUE 1.
-
-  DO digit_number TIMES.
+  DO digits TIMES.
     maximum = maximum * 10.
     ENDDO.
   maximum = maximum - 1.
 
-  digit_number = digit_number - 1.
-  DO digit_number TIMES.
+  digits = digits - 1.
+  DO digits TIMES.
     minimum = minimum * 10.
     ENDDO.
-
-  WRITE / 'Maximum product number:'.
-  WRITE maximum.
-  WRITE / 'Minimum product number:'.
-  WRITE minimum.
 
   DATA o_reset TYPE i.
   DATA i_reset TYPE i.
@@ -46,10 +51,6 @@ FORM largest_palindrome_product USING digit_number TYPE i.
       palindrome_candidate = i * o.
       PERFORM is_number_palindrome USING palindrome_candidate
                                          boolean_palindrome.
-      WRITE / 'Outer:'.
-      WRITE o.
-      WRITE 'Inner:'.
-      WRITE i.
       i = i - 1.
       o = o + 1.
 
