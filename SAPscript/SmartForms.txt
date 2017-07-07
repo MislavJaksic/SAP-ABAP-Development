@@ -17,7 +17,7 @@ Print programs defines how and which tables will be filled with data from the da
 
 SmartForms function module
 --------------------------
-Function module can be generated automaticly based on the defined style and form. The function module replaces the composer program in SAPscript.
+Function module can be generated automatically based on the defined style and form. The function module replaces the composer program in SAPscript.
 
 SmartForms tools
 ----------------
@@ -53,7 +53,7 @@ SmartFdorms form can be tested as if it were an ordinary program.
 
 SmartForm translation
 ---------------------
-SmartForms can be translated throught SE63 or Tools, R/3 Enterprise, Other Long Texts.
+SmartForms can be translated through SE63 or Tools, R/3 Enterprise, Other Long Texts.
 
 STOPPED AT THE BOTTOM OF PAGE 47
 

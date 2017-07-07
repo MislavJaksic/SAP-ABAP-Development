@@ -7,9 +7,9 @@ Print program
 -------------
 Print program is responsible for retrieving the data from the SAP system and for the control logic of the output.
 
-Composter
+Composer
 ---------
-Composter formats lines and executes script commands. The composter is sent data from the print program and the script.
+composer formats lines and executes script commands. The composer is sent data from the print program and the script.
 
 User SAPscript settings
 -----------------------
@@ -37,7 +37,7 @@ Layout defines the look of SAPscript. Layout defines what types of pages will be
 
 SAPscript layout windows
 ------------------------
-Windows have different types. The most important window type is MAIN. MAIN is filled with data after the composter has processed all static windows. The position of the window within the layout can be set and changed. Each window has static texts and variables that will be printed. The contents of each window can be seen with the Line Editor.
+Windows have different types. The most important window type is MAIN. MAIN is filled with data after the composer has processed all static windows. The position of the window within the layout can be set and changed. Each window has static texts and variables that will be printed. The contents of each window can be seen with the Line Editor.
 
 Window Line Editor
 ------------------
@@ -74,7 +74,7 @@ WRITE_FORM has the following parameters: element specifies which text element wi
 
 SAPscript customizing
 ---------------------
-Customizing is done in transaction SPRO. Customizing SAPscript is done in many places, but it is done most commonly is SD, MM and FI (Sales and Distribution, Material Managment and Finance). Options are located inder the Output Control node.
+Customizing is done in transaction SPRO. Customizing SAPscript is done in many places, but it is done most commonly is SD, MM and FI (Sales and Distribution, Material Management and Finance). Options are located inder the Output Control node.
 
 
 Special format characters
