@@ -17,7 +17,7 @@ FORM evenly_divisible USING max TYPE i.
     PERFORM number_to_primes USING number
                                 primes.
     CLEAR count_table.
-    PERFORM count_integers_in_table USING primes
+    PERFORM make_integer_count_table USING primes
                                         count_table.
     LOOP AT count_table INTO count_entry.
       READ TABLE number_constructor WITH TABLE KEY key = count_entry-key INTO constructor_entry.
