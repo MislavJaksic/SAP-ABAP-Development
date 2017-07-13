@@ -5,5 +5,4 @@ ABAP is an arcane language with an extremely outdated syntax. Its modern incarna
 
 ABAP specific folders
 ---------------------
-
-Some languages can have additional folders which cannot be found in the list above. That is because some languages have special features that deserve to be covered.
+-GenericDynamicProgramming: teaches about generic and dynamic capabilities of ABAP. It is mostly concerned with creating and analysing variables.
