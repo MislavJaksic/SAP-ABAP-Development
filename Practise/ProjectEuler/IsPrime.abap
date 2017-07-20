@@ -3,7 +3,7 @@
 *Very slow, but memory efficient
 FORM is_prime USING value(number) TYPE p
                     boolean_prime TYPE i.
-  DATA divider TYPE i VALUE 4.
+  DATA divider TYPE i VALUE 2.
   DATA boolean_div TYPE i.
   DATA root TYPE f.
   boolean_prime = 1.
@@ -16,7 +16,7 @@ FORM is_prime USING value(number) TYPE p
     IF number <= 3.
       EXIT.
       ENDIF.
-    IF divider >= root.
+    IF divider > root.
       EXIT.
       ENDIF.
     boolean_div = number MOD divider.
