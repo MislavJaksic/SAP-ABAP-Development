@@ -74,6 +74,8 @@ OutputDevice and you should choose LP01 for the purposes of testing and click
 print preview. This will show you an example of show the SmartForm will look on
 paper.
 
+You can cycle through the pages in print preview using PageUp and PageDown. 
+
 ### SmartForm Print Program
 
 SmartForms generate a function module that fills it will data, but you still
