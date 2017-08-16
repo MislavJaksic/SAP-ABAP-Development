@@ -6,6 +6,7 @@ programs are smaller and more modular. SmartForms are made up from three
 elements: form, style and print program.
 
 SF_EXAMPLE_01: Smart Forms Training Example
+
 SF_STYLE_01: Training Example
 
 ### SmartForms Vocabulary
@@ -154,6 +155,10 @@ Everything that is changed in the original will also be changed in the copy.
 ### Change Text Editor Type
 
 SE38 and enter RSCPSETEDITOR. Do not ignore the warning.
+
+### SmartForm Activation
+
+Saving is not enough, you need to activate the form before the changed made to it will be updated.
 
 ## SmartForm Styles
 
