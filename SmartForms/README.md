@@ -167,47 +167,31 @@ Makes text pretty...
 ### Print Program Example
 
 ```abap
-report zsf_example_01.
+report zplayground.
 
 * declarations
-DATA: carr_id TYPE sbook-carrid ...
-
+DATA flights TYPE STANDARD TABLE OF spfli.
 * select data
-  SELECT * FROM scustom INTO TABLE customers ...
-
-  SELECT * FROM sbook INTO TABLE bookings ...
-
-  SELECT * FROM spfli INTO TABLE connections ...
-
-
+SELECT *
+  FROM spfli
+  INTO TABLE flights.
+  
 * determine SmartForm's generated function module name
-  CALL FUNCTION 'SSF_FUNCTION_MODULE_NAME'
-       EXPORTING  formname           = p_form
-       IMPORTING  fm_name            = fm_name
-       EXCEPTIONS no_form            = 1
-                  no_function_module = 2
-                  OTHERS             = 3.
-
+DATA smart_form_name TYPE tdsfname VALUE 'ZPLAYGROUND'.
+DATA function_module_name TYPE rs38l_fnam.
+CALL FUNCTION 'SSF_FUNCTION_MODULE_NAME'
+     EXPORTING  formname           = smart_form_name
+     IMPORTING  fm_name            = function_module_name
+     EXCEPTIONS no_form            = 1
+                no_function_module = 2
+                OTHERS             = 3.
 * call SmartForm's function module
-  CALL FUNCTION fm_name
-       EXPORTING
-*                 archive_index        =
-*                 archive_parameters   =
-*                 control_parameters   =
-*                 mail_appl_obj        =
-*                 mail_recipient       =
-*                 mail_sender          =
-*                 output_options       =
-*                 user_settings        = 'X'
-                  customers            = customers
-                  bookings             = bookings
-                  connections          = connections
-*      importing  document_output_info =
-*                 job_output_info      =
-*                 job_output_options   =
-       EXCEPTIONS formatting_error     = 1
-                  internal_error       = 2
-                  send_error           = 3
-                  user_canceled        = 4
-                  OTHERS               = 5.
+CALL FUNCTION function_module_name
+     EXPORTING
+                flights              = flights "SmartForm has very strict type checking
+     EXCEPTIONS formatting_error     = 1
+                internal_error       = 2
+                send_error           = 3
+                user_canceled        = 4
+                OTHERS               = 5.
 ```
