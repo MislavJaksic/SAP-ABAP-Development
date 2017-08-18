@@ -4,8 +4,8 @@ REPORT  AlgebraAndStrings.
 *Elementary types
 DATA integer TYPE i.
 DATA float TYPE f. "and p
-DATA character TYPE c.
-DATA string TYPE string.
+DATA char TYPE c.
+DATA str TYPE string.
 DATA time TYPE t. "and d for date
 
 TYPES: BEGIN OF structure,
@@ -15,17 +15,13 @@ TYPES: BEGIN OF structure,
 DATA structure_data TYPE structure.
 structure_data-struct_number = 7.
 
-*Normal division
-integer = 6 / 5.
+integer = 6 / 5. "Normal division
 WRITE / integer. "-> _________1
-*Integer division
-integer = 6 DIV 5.
+integer = 6 DIV 5. "Integer division
 WRITE / integer. "-> _________1
-*Modulo
-integer = 15 MOD 2.
+integer = 15 MOD 2. "Modulo
 WRITE / integer. "-> _________1
-*Exponentiation
-integer = 4 ** 2.
+integer = 4 ** 2. "Exponentiation
 WRITE / integer. "-> ________16
 
 DATA result TYPE f.
@@ -60,20 +56,27 @@ DATA p_two TYPE string.
 string = ' St    ring    '.
 CONDENSE string NO-GAPS.
 WRITE / string. "-> String
+
 TRANSLATE string TO UPPER CASE.
 WRITE / string. "-> STRING
-TRANSLATE string USING 'TtRrIiNnGg'.
+
+TRANSLATE string USING 'TtRrIiNnGg'. "odd characters transform into even characters, T->t, R->r, I->i, ...
 WRITE / string. "-> String
+
 SPLIT string AT 'r' INTO p_one p_two.
 WRITE / string. "-> String
 WRITE p_one. "-> St
 WRITE p_two. "-> ing
+
 SEARCH string FOR 'k'.
 WRITE / sy-subrc. "-> ____4 , code for not found
+
 CONCATENATE string string INTO string.
 WRITE / string. "-> StringString
+
 integer = STRLEN( string ).
 WRITE / integer. "-> ________12
+
 *Don't use REPLACE as it behaves illogically with
 *whitespaces and has a complex syntax. Use
 *TRANSLATE .. USING instead to replace characters
