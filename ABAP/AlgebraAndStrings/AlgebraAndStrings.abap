@@ -5,7 +5,7 @@ REPORT  AlgebraAndStrings.
 DATA integer TYPE i.
 DATA float TYPE f. "and p
 DATA char TYPE c.
-DATA str TYPE string.
+DATA string TYPE string.
 DATA time TYPE t. "and d for date
 
 TYPES: BEGIN OF structure,
