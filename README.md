@@ -1,27 +1,26 @@
 ## SAP
 
 SAP stands for Systems, Applications & Products in Data Processing and is the name of the corporation that
-constructed the Enterprise Resource Planning (ERP) system of the same name. Large and medium-large corporations
-use ERP systems to make sure their business is effective and efficient. The purpose of ERP systems is to
-integrate the business processes such as finance, production planning, sales and distribution and many others
-into a single large program.
+constructed the Enterprise Resource Planning (ERP) system of the same name. Large and medium sized corporations
+use ERP systems to make sure their business is effective and efficient. The purpose of an ERP systems is to
+map the business processes such as those in finance, production planning, sales and distribution, material
+management and others onto a program that will perform these processes faster, with less error and in greater
+volume.
 
 ### SAP modules
 
-SAP is a very large program which is why it is also called a system. Because SAP is so large, SAP is divided
-into modules where each module covers only a single process such as Finance(FI) or Material Management(MM).
+SAP is divided into modules because it is a very large program that covers almost all business processes. Each
+module is distinct and covers only a single area such as Finance(FI), Material Management(MM) or Sales and
+Distribution(SD).
 
-### Fine tunning
+### SAP development and customizing
 
-Each trade society, business and corporation (SAP calls them customers) has similar processes which are
-already implemented in SAP, but they need to be fine tuned for each customer. This is where ABAP comes in.
+Each trade society, business and corporation has similar processes which are already implemented in SAP modules,
+but they need to be fine tuned for each customer. These processes are fine tuned using ABAP to develop special
+functionalities that don't exist in a module or to change how an existing process works.
 
 ### ABAP
 
-ABAP stands for Advanced Business Application Programming and is a programming language most similar to COBOL.
-It is used for creating, modifying and extending SAP's programs, so they can accommodate the different needs
-of businesses.
-
-### Other tools
-
-SAP is so huge that listing all tool for customizing, development and enhancement would be too laborious.
+ABAP stands for Advanced Business Application Programming, a programming language similar to COBOL in which
+SAP is written. ABAP is used for creating, modifying and extending SAP's programs, so they can accommodate
+the different needs of businesses.
