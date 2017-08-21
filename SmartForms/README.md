@@ -1,175 +1,79 @@
 ## SmartForms
 
-SmartForms are used for the same purpose as SAPscript, they specify what will be
-printed onto a piece of paper. SmartFroms have a better graphical design interface and their
-programs are smaller and more modular. SmartForms are made up from three
-elements: form, style and print program.
+Transaction: SMARTFORMS
 
-SF_EXAMPLE_01: Smart Forms Training Example
+Create SmartForm form: create a blank SmartForm or copy an existing one and
+create a Z named SmartForm form.
 
-SF_STYLE_01: Training Example
+Print program: an ABAP program that will invoke the SmartForm's function module
+and pass it the data.
 
-### SmartForms Vocabulary
+- SmartForm
+  - Global Settings
+    - Form Attributes - specify output format, page format and SmartForm style
+    - Form Interface - parameter interface through which data is exchanged with
+the print program, types have to be defined in the ABAP Dictionary 
+    - Global Definitions - define local, working variables such as those into
+which tables are going to be unpacked
+  - Pages and Windows
+    - FIRST page - points to the NEXT page
+    - NEXT page - points to itself
+    - Nodes - the building blocks of SmartForm
 
-The form defines windows and texts, controls the print flow and where the basic
-elements are located.
-
-Style defines the look of the text.
-
-Print programs defines how and which tables will be filled with data from the
-database tables.
-
-Function module can be generated automatically based on the defined style and
-form. The function module replaces the composer program in SAPscript.
-
-SmartForm settings: SMARTFORMS, Utilities, Settings.
-
-### Create a SmartForm
-
-Don't change an existing SmartForm, instead, copy it and create a Z named form. You
-can also create a new, empty SmartForm. SmartForms are divided into Global Settings
-and Pages and Windows.
-
-### SmartForms Global Settings
-
-Form attributes allow you to specify translation options and output options.
-
-Form interface defines the input and output parameters which are used to
-exchange data with the print program, a program that will prepare and pass data
-to the SmartForm.
-
-Global definitions are where variables and structures are defined and declared
-for this particular SmartForm.
-
-### SmartForms Pages and Windows
-
-Pages and windows define the visual look of the SmartForm using nodes.
+There can be more then two pages, but then their interaction becomes complicated.
 
 ### Nodes
 
-Nodes say in what order, what text and where it will be printed. Nodes share
-some attributes, but many of them have special attributes that need to be
-configured to fine tune the node. Most nodes can have subnodes.
+- Page - there will normally be only two pages, NEXT and FIRST
+  - Window - there can only be one Main Window, all other are either Secondary
+or Final
+    - Table - under table->details define a line type by defining the width of
+each column. Under data, specify which form interface table will be unpacked into
+which global definition local variable 
+      - Table line - set line type that you previously defined under
+table->details. This will generate cells, text elements into which you will be
+able to write
+    - Text element - write text. Variables will be printed if their name is
+sandwiched between & and the variable then appears on a gray background. If a
+text module by type, then you have to create the text module in transaction
+SMARTFORMS
+  - Graphic - define which picture you want to show. Upload a picture using
+transaction SE78
+  - Address - prints out ISO formatted data
+  - Other nodes - Template, Include Text type of Text element, Program lines,
+Command, Loop and Alternatives
 
-Nodes are divided into groups based on what they do:
-- Display nodes - Page, Window, Template and Table all have the ability to be
-displayed.
-- Elementary nodes - Text, Graphics and Address cannot have subnodes.
-- Flow Control nodes - these nodes define conditions and paths in which the
-SmartForm will be generated.
+### Function module generation
 
-Nodes are created by right-clicking the existing nodes and then clicking create.
+Generate function module: Activate SmartForm->Execute SmartForm
 
-### Field List
+You have to do this every time you make changes to the SmartForm.
 
-Field list allows fields to be drag and dropped, which speeds up SmartForms
-development. This only works with the old editor.
+### Print Program
 
-### SmarfForms Form Testing
+The data type of the table that will be send to the SmartForm's function module
+has to be field for field exact as the importing parameter's type defined in the
+Form Interface.
 
-SmartFdorms form are tested in the same way ordinary programs are tested. Click
-Execute, then the SmartForm will generate a function module. The function module
-can then be tested by clicking Execute again. You will be prompted to select an
-OutputDevice and you should choose LP01 for the purposes of testing and click
-print preview. This will show you an example of show the SmartForm will look on
-paper.
+Select data with SQL.
 
-You can cycle through the pages in the print preview using PageUp and PageDown. 
+Invoke 'SSF_FUNCTION_MODULE_NAME' and then invoke the function module.
 
-### SmartForm Print Program
+### Testing
 
-SmartForms generate a function module that fills it will data, but you still
-have to make an ABAP program that will give the function module the required
-data. That program is called a print program. All print program are similar in
-that they all need to select data from a table, then modify the data if necessary.
-After the data has been prepared, the program has to find the name of the
-funtion module that the SmartForm has generated by invoking
-'SSF_FUNCTION_MODULE_NAME'. The function will return the function module name
-and then it will be invoked and given the prepared data. Take a look at the
-example print program at the bottom.  
+SmartForm testing: Execute Print Program->OutputDevice=LP01->Print Preview
 
-### SmartForm Translation
+or
 
-SmartForms can be translated through SE63. Once there, select Tools, R/3 Enterprise,
-Other Long Texts. If you cannot find this, use Translations, ABAP Object,
-Other Long Texts, then find Smart Form in the tree and select it. There you
-will be able to name the target language and the object you want to translate.
+Execute SmartForm's Function Module->Give parameters data->Execute Module->
+OutputDevice=LP01->Print Preview
 
-### More on Nodes
+You can cycle through the pages in the print preview using PageUp and PageDown.
 
-- Page - what will be the next page (more often then not, the first page will
-point to the next page and then the next page will point to itself), other
-options are self explanatory.
-
-- Window - divide a page into print areas. There has to be one and only one MAIN
-window on each page. Most other windows should be secondary. Conditions can be
-defined to say when this window can be printed out. To "comment" the window, set
-an impossible condition such as 1=0.
-
-- Template - for printing tables whose content is known in advance (the number of
-rows and columns must be constant). You can use both the Details and Table
-Painter to define the template. The template needs subnodes that will fill it
-will data.
-
-- Table - prints table data of unknown size. Comes with three subnodes by default.
-You have to define the table source by setting an internal table and line. Line
-is defined in the global definitions and the table is defined in the form
-interface(note: you cannot declare it a table type, instead you must define it
-as a table line type. If the line type doesn't exist, you have to define it in
-the Dictionary.) You can also perform calculations such as sum.
-
-- Text - prints text. There are three subtypes of text: Text Element, Include
-Text and Text Module. The text can be a New Paragraph, New Line or can be
-Appended Directly.
-    - Text Element - text is written manually. Variables (grey) can be added using
-    Field list through drag and drop (if you are not using the MSWord) or
-    surround the variable name with &VAR& and then delete the <,>,) supresor
-    chars in the other editor. If in a template, you have to define the row and
-    column if you want the element to be displayed.
-    
-    - Include Text - text from existing SAPscripts.
-    
-    - Text Module - perhaps the most useful element as it can be transported and
-    translated. Created on the same screen on which a SmartForm or Style would
-    be created.
-
-- Address - a special node that allows data to be printed in ISO format. Based on
-SAP's Central Address Management.
-
-- Graphics - pictures can be uploaded using SE78 and then they can be used as
-background pictures, logos or graphs.
-
-- Program lines - avoid them. If you can't, use them with caution.
-
-Alternatives - 
-Command - 
-Loop - 
-
-### SmartForms Text Module
-
-Created in SMARTFORMS. It can be used in many SmartForms.
-    
-### Copying Nodes
-
-If a node is copied then the copy will be a reference to the original.
-Everything that is changed in the original will also be changed in the copy.
-
-### Change Text Editor Type
-
-SE38 and enter RSCPSETEDITOR. Do not ignore the warning.
-
-### SmartForm Activation
-
-Saving is not enough, you need to activate the form before the changed made to it will be updated.
-
-## SmartForm Styles
-
-Makes text pretty...
-
-### Print Program Example
+### Print program example
 
 ```abap
-report zplayground.
+REPORT zplayground.
 
 * declarations
 DATA flights TYPE STANDARD TABLE OF spfli.
