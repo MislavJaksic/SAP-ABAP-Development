@@ -1,7 +1,7 @@
 ## SmartForms
 
-SmartForms are used for the same purpose as SAPscript, they specify how text is
-printed onto a piece of paper. SmartFroms have better graphics and their
+SmartForms are used for the same purpose as SAPscript, they specify what will be
+printed onto a piece of paper. SmartFroms have a better graphical design interface and their
 programs are smaller and more modular. SmartForms are made up from three
 elements: form, style and print program.
 
@@ -24,10 +24,10 @@ form. The function module replaces the composer program in SAPscript.
 
 SmartForm settings: SMARTFORMS, Utilities, Settings.
 
-### Create SmartForms Form
+### Create a SmartForm
 
-Never change an existing SmartForm form, copy it and create a Z named form. You
-can create a new, empty SmartForm. SmartForms are divided into Global Settings
+Don't change an existing SmartForm, instead, copy it and create a Z named form. You
+can also create a new, empty SmartForm. SmartForms are divided into Global Settings
 and Pages and Windows.
 
 ### SmartForms Global Settings
@@ -63,7 +63,7 @@ Nodes are created by right-clicking the existing nodes and then clicking create.
 ### Field List
 
 Field list allows fields to be drag and dropped, which speeds up SmartForms
-development.
+development. This only works with the old editor.
 
 ### SmarfForms Form Testing
 
@@ -74,7 +74,7 @@ OutputDevice and you should choose LP01 for the purposes of testing and click
 print preview. This will show you an example of show the SmartForm will look on
 paper.
 
-You can cycle through the pages in print preview using PageUp and PageDown. 
+You can cycle through the pages in the print preview using PageUp and PageDown. 
 
 ### SmartForm Print Program
 
