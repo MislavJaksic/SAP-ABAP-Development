@@ -32,8 +32,13 @@ Standard function modules are available in function group EDI1.
 
 IDoc components
 ---------------
-Basic IDoc type (aka IDoc type, IDoc name) defines the structure of the IDoc. IDoc name is made up 8 characters, the first being Z if its a custom IDoc and the last two are version number. Each IDoc has a number of segments and each segment can have their own segments. Some segments are mandatory while others are optional. Range defines how many segments can there be under another segment or IDoc type.
-A segment is made up of data elements where each one has a type (and length). A segment has a type (aka segment name) which starts with Z if it is custom, segment definition can have up to 1000 characters, start with E2 and a segment can have more then one segment definition.
+Basic IDoc type (aka IDoc type, IDoc name) defines the structure of the IDoc. IDoc name is made up 8 characters, the
+first being Z if its a custom IDoc and the last two are version number. Each IDoc has a number of segments and each 
+segment can have their own segments. Some segments are mandatory while others are optional. Range defines how many 
+segments can there be under another segment or IDoc type.
+A segment is made up of data elements where each one has a type (and length). A segment has a type (aka segment name)
+ which starts with Z if it is custom, segment definition can have up to 1000 characters, start with E2 and a segment
+can have more then one segment definition.
 Is SAP segments are called with their type/name while outside SAP segments are called by their definition.
 
 IDoc structure
