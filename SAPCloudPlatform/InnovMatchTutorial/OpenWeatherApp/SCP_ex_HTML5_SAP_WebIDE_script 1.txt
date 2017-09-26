@@ -1,0 +1,23 @@
+{
+    "authenticationMethod": "none",
+    "routes": [
+        {
+            "path": "/openweathermap",
+            "target":
+            {
+                "type": "destination",
+                "name": "openweather"
+            },
+            "description": "OpenWeather System"
+        },
+        {
+            "path": "/resources",
+            "target": {
+                "type": "service",
+                "name": "sapui5",
+                "entryPath":"/resources"
+            },
+                "description": "SAPUI5"
+        }
+    ]
+}

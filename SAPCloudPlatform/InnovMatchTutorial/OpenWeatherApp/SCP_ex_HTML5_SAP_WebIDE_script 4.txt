@@ -1,0 +1,27 @@
+sap.ui.define([
+	"sap/ui/model/json/JSONModel",
+	"sap/ui/Device"
+], function(JSONModel, Device) {
+	"use strict";
+
+	return {
+
+		createDeviceModel: function() {
+			var oModel = new JSONModel(Device);
+			oModel.setDefaultBindingMode("OneWay");
+			return oModel;
+		},
+
+		createAPIModel: function(city) {
+		    
+		    
+		    var oModel = new JSONModel();
+			oModel.loadData("/openweathermap/data/2.5/weather?appid=YOUR_API_KEY&q=" + city+"&units=metric", null, false);
+		    
+			return oModel;
+		}
+
+
+	};
+
+});

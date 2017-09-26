@@ -1,0 +1,18 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="tempdemowebide.controller.weather">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<ObjectHeader title="The Weather App" intro="SAP UI5" introActive="true" titleActive="true" iconActive="false" id="__header0"/>
+					<StandardTile title="Current weather in {openweather>/name}" info="{openweather>/weather/0/description}"
+						icon="http://openweathermap.org/img/w/{openweather>/weather/0/icon}.png" activeIcon="sap-icon://weather-proofing" infoState="Success" id="__tile0"
+						number="{openweather>/main/temp}" numberUnit="CELSIUS" app:mydata="{openweather>/name}" press="press" tooltip=""/>
+					<StandardTile title="Current weather in {openweather1>/name}" info="{openweather1>/weather/0/description}"
+						icon="http://openweathermap.org/img/w/{openweather1>/weather/0/icon}.png" activeIcon="sap-icon://weather-proofing" infoState="Success"
+						id="__tile3_copy" number="{openweather1>/main/temp}" numberUnit="CELSIUS" app:mydata="{openweather1>/name}" press="press" tooltip=""/>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
