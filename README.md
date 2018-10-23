@@ -2,18 +2,20 @@
 
 SAP stands for Systems, Applications & Products in Data Processing and is also the name of the corporation that
 constructed the Enterprise Resource Planning (ERP) system of the same name. Large and medium sized corporations
-use ERP systems to make sure their business is effective and efficient. The purpose of an ERP systems is to
-map the business processes such as those in finance, production planning, sales and distribution, material
-management and others onto a group of closely related programs that integrate well with each other to perform the
-required operations faster, with less errors and in greater volume then if the programs were independent.
+use ERP systems to make sure their business is effective and efficient.
+
+The purpose of an ERP systems is to map the business processes in finance, production planning, sales and
+distribution, material management and others onto a group of closely related programs which, because they are
+well integrated, perform the required operations faster, with less errors and in greater volume then if the
+programs were independent.
 
 ### SAP modules
 
-SAP is divided into modules out of necessity because SAP covers almost all standard business processes. Each
-module is distinct and covers only a single area such as Finance (FI), Material Management (MM) or Sales and
-Distribution (SD).
+SAP is divided into modules, out of necessity more then anything else, because SAP covers almost all standard
+business processes. Each module is distinct and covers only a single area such as Finance(FI), Material Management(MM)
+or Sales and Distribution(SD).
 
-### SAP development and customizing
+### SAP development and customisation
 
 Businesses have very similar processes which are already implemented in SAP modules, but they need to be fine tuned
 to the specific needs of a business. The processes are fine tuned using the SAP Implementation Guide (IMG) or if the
