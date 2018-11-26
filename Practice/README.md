@@ -1,19 +1,19 @@
 ## ABAP practice
 
-ABAP was made for businesses, to handle data from the database and to fill the interface and windows with the same.
-However, ABAP can also be used to write complex algorithms as the following folder will demonstrate.
+ABAP has capabilitiess such as database row handling and displaying the same on the GUI and windows built
+into the language by deafult.  
+However, ABAP can also be used to write complex algorithms. Some of these can be found in the subfolders.  
 
-### File Archivist
+### File Archiver
 
-A program that applies a function to a text file and then transfers the file to an archive.
+A program that applies a function to a text file and then transfers the file to an archive.  
 
-### Project Euler
+### [Project Euler](https://projecteuler.net/)
 
-Programs that solve mathematical problems in an optimal way.
+Programs that solve mathematical problems in an optimal way.  
 
 
-
-*SCARR: Airline
-*SPFLI: Flight schedule
-*SFLIGHT: Flight
-*SBOOK: Single Flight Booking
+*SCARR: Airline  
+*SPFLI: Flight schedule  
+*SFLIGHT: Flight  
+*SBOOK: Single Flight Booking  

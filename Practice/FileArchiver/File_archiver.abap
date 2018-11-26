@@ -1,15 +1,15 @@
 *&---------------------------------------------------------------------*
-*& Report  Z_FILE_ARCHIVIST
+*& Report  Z_FILE_ARCHIVER
 *&
 *&---------------------------------------------------------------------*
 *&
 *&
 *&---------------------------------------------------------------------*
 
-REPORT  z_file_archivist.
+REPORT  z_file_archiver.
 
 *----------------------------------------------------------------------*
-*       CLASS file_archivist DEFINITION
+*       CLASS file_archiver DEFINITION
 *----------------------------------------------------------------------*
 * USE: copy all the files' data into a directory, perform a function on
 *      data and delete the original files
@@ -17,7 +17,7 @@ REPORT  z_file_archivist.
 *              be overriden, but instead, data will be appended. This
 *              shouldn't occure as file names should be unique
 *----------------------------------------------------------------------*
-CLASS file_archivist DEFINITION.
+CLASS file_archiver DEFINITION.
   PUBLIC SECTION.
     METHODS:
     find_and_transfer_files IMPORTING im_input_dir TYPE string
