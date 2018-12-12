@@ -11,11 +11,11 @@ REPORT  z_file_archiver.
 *----------------------------------------------------------------------*
 *       CLASS file_archiver DEFINITION
 *----------------------------------------------------------------------*
-* USE: copy all the files' data into a directory, perform a function on
-*      data and delete the original files
-* DESIGN NOTE: if a file already exists in the destination, it will not
-*              be overriden, but instead, data will be appended. This
-*              shouldn't occure as file names should be unique
+* USE: copy every file's data into a directory, perform a function on
+*      it and delete the original files
+* DESIGN NOTE: if a file already exists at the destination, the data
+*              will be appended. This shouldn't occure as file names
+*              should be unique
 *----------------------------------------------------------------------*
 CLASS file_archiver DEFINITION.
   PUBLIC SECTION.
@@ -42,9 +42,9 @@ ENDCLASS.                    "file_archivist DEFINITION
 *       CLASS file_rules DEFINITION
 *----------------------------------------------------------------------*
 * USE: determine if a directory is a file
-* DESIGN NOTE: the rules for checking if a directory is a file is
-*              seperate from the rest of the logic to allow for greater
-*              flexibility
+* DESIGN NOTE: rules for checking if a directory is a file has been
+*              seperated from the rest of the logic to allow for greater
+*              program flexibility
 *----------------------------------------------------------------------*
 CLASS file_rules DEFINITION.
   PUBLIC SECTION.
@@ -64,8 +64,8 @@ ENDCLASS.                    "file_rules DEFINITION
 *----------------------------------------------------------------------*
 * USE: wraps a function that the move_and_process object will execute on
 *      data
-* DESIGN NOTE: this wrapper is a way of addind higher order function
-*              capabilities to ABAP
+* DESIGN NOTE: this wrapper adds higher order function capabilities to
+*              ABAP
 *----------------------------------------------------------------------*
 CLASS function_wrapper DEFINITION.
   PUBLIC SECTION.

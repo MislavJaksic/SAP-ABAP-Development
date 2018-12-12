@@ -1,4 +1,4 @@
-*suggested way of displaying the ALV grid:
+*recommended way of displaying an ALV grid:
 TYPES : BEGIN OF line_type,
           example TYPE example_type,
         END OF line_type.

@@ -1,4 +1,4 @@
-*using this is not recommended. Use ALV_class instead
+*use ALV_class instead; depricated way of displaying an AVL grid
 TYPES : BEGIN OF line_type,
           example TYPE example_type,
 		  another_example TYPE another_example_type,
