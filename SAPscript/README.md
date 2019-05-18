@@ -5,12 +5,11 @@ SAPscript is language dependant. SAPscript is client dependant.
 
 ### Print program
 
-Print program is responsible for retrieving the data from the SAP system and for the control logic of the
-output.  
+Print program is responsible for retrieving the data from the SAP system and for the control logic of the output.  
 
 ### Composer
 
-composer formats lines and executes script commands.  
+Composer formats lines and executes script commands.  
 The composer is sent data from the print program and the script.  
 
 ### User SAPscript settings
@@ -28,8 +27,7 @@ SE71, Utilities, Copy from Client, select a SAPscript and choose a new Z target 
 
 ### SAPscript elements
                   
-SAPscript elements are header, layout, paragraph format and character format (there are others as well but
-they are not as important).  
+SAPscript elements are header, layout, paragraph format and character format (there are others as well but they are not as important).  
 
 ### SAPscript header
                 
@@ -102,86 +100,88 @@ Print programs are made up of function module invocations.
 OPEN_FORM and CLOSE_FORM must be used as they open the form for printing.  
 START_FORM and END_FORM are used when more forms will be combined into one spool request.  
 WRITE_FORM controls text element printing.  
-WRITE_FORM has the following parameters: element specifies which text element will be printed, function says
-how it will be printed (append, replace, delete), type says where in the window will it be printed and
-window says in which window it will be printed.  
+WRITE_FORM has the following parameters: element specifies which text element will be printed, function says how it will be printed (append, replace, delete), type says where in the window will it be printed and window says in which window it will be printed.  
 
 ### SAPscript customizing
                      
 Customizing is done in transaction SPRO.  
-Customizing SAPscript is done in many places, but it is done most commonly is SD, MM and FI (Sales and
-Distribution, Material Management and Finance).  
-Options are located inder the Output Control node.  
+Customizing SAPscript is done in many places, but it is done most commonly is SD, MM and FI (Sales and Distribution, Material Management and Finance).  
+Options are located inside the Output Control node.  
 
 
 ### Special format characters
-                         
-#	 predefine header  
-/	 new line  
-=	 continue previous line  
-/: 	SAPscript command line  
-/# 	comment  
-/E 	text element  
+
+| Character | Description |
+|---|---|
+| # | predefine header |
+| / | new line |
+| = | continue previous line |
+| /: | SAPscript command line |
+| /# | comment |
+| /E | text element |
 
 ### Variable format
-               
-&table field(n)& 	write the first n characters  
-&table field(.1)& 	write the number with 1 decimal place  
-&table field(Z)& 	leave out leading zeroes  
-&table field(S)& 	leave out the sign (+,  )  
-&table field(<)& 	write the sign to the left  
-&table field(>)& 	write the sign to the right  
+
+| Variable | Description |
+|---|---|
+| &table field(n)& | write the first n characters |
+| &table field(.1)& | write the number with 1 decimal place |
+| &table field(Z)& | leave out leading zeroes |
+| &table field(S)& | leave out the sign (+,  ) |
+| &table field(<)& | write the sign to the left |
+| &table field(>)& | write the sign to the right |
 
 ### System symbols
-              
-&DATE& 				system date  
-&TIME& 				system time  
-&PAGE& 				current page  
-&ULINE(X)& 		write out a x character long horizontal line  
-&VLINE(Y)& 	  write out a x character long vertical line  
+
+| Symbol | Description |
+|---|---|
+| &DATE& | system date |
+| &TIME& | system time |
+| &PAGE& | current page |
+| &ULINE(X)& | write out a x character long horizontal line |
+| &VLINE(Y)& | write out a x character long vertical line |
 
 ### SAPscript commands
-                  
-NEW PAGE 			force a page break  
-PROTECT and END PROTECT	 makes sure the data in the block isn't broken up onto two pages  
-INCLUDE	for icluding standard texts during printing  
-IF (ELSE) ENDIF	conditional block  
-BOX, POSITION, SIZE	frame printing  
+
+| Command | Description |
+|---|---|
+| NEW PAGE | force a page break |
+| PROTECT, END PROTECT | data shouldn't be split among two pages |
+| INCLUDE | for including standard texts during printing |
+| IF (ELSE) ENDIF | conditional block |
+| BOX, POSITION, SIZE | frame printing |
 
 ### Control commands
-                
-/: 	INCLUDE  
-for including long text in the script  
-/: 	DEFINE  
-for assigning values to text symbols  
-/: 	ADDRESS … ENDADDRESS  
-for formatting adresses  
-/: 	PROTECT … ENDPROTECT  
-makes sure the data in the block isn't broken up onto two pages  
-/: 	NEW PAGE  
-force a page break  
-/: 	IF … ENDIF  
-conditional block  
-/:	CASE … ENDCASE  
-conditional block  
+
+| Command | Description |
+|---|---|
+| INCLUDE | include long text in the script |
+| DEFINE | assign values to text symbols |
+| ADDRESS, ENDADDRESS | format adresses |
+| PROTECT, ENDPROTECT | keep data on a single page |
+| NEW PAGE | force a page break |
+| IF, ENDIF | conditional block |
+| CASE, ENDCASE | conditional block |
 
 ### Including text and loading graphics
                                    
 INCLUDE &ZTEXT& OBJECT TEXT ID ADRS LANGUAGE E.  
 In Line Editor use Insert, Text, Standard Text.  
+
 BITMAP 'Z_NAZIV' OBJECT GRAPHICS ID BMAP TYPE BMON ( BCOL)  
 In Line Editor use Insert, Graphics.  
 
 ### PERFORM..ENDPERFORM
-                   
-In SAPscript PERFORM is used to invoke a routine in a program. An example of syntax follows:  
-/:	DEFINE &SIFRA_POR& =  ' '  
-/:	PERFORM POREZ IN PROGRAM ZTEST_OBRASCI  
-/:	USING &VBDKR KUNRG&  
-/:	CHANGING &SIFRA_POR&  
-/:	ENDPERFORM  
 
-...somewhere else...  
+In SAPscript PERFORM is used to invoke a routine in a program.  
+
+| Syntax |
+|---|
+| DEFINE &SIFRA_POR& = ' ' |
+| PERFORM POREZ IN PROGRAM ZTEST_OBRASCI |
+| USING &VBDKR KUNRG& |
+| CHANGING &SIFRA_POR& |
+| ENDPERFORM |
 
 ```abap
 REPORT ZTEST_FORM.  

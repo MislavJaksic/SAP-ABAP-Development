@@ -1,74 +1,76 @@
 ## SmartForms
 
-Transaction: SMARTFORMS
+Transaction: SMARTFORMS  
 
-Create SmartForm form: create a blank SmartForm or copy an existing one and
-create a Z named SmartForm form.
+Create SmartForm form:  
+```
+Create a blank SmartForm
+OR
+Copy an existing form and create a Z named SmartForm form
+```
 
-Print program: an ABAP program that will invoke the SmartForm's function module
-and pass it the data.
+Print program:
+```
+An ABAP program passes data to a SmartForm Function Module
+```
 
-- SmartForm
-  - Global Settings
-    - Form Attributes - specify output format, page format and SmartForm style
-    - Form Interface - parameter interface through which data is exchanged with
-the print program, types have to be defined in the ABAP Dictionary 
-    - Global Definitions - define local, working variables such as those into
-which tables are going to be unpacked
-  - Pages and Windows
-    - FIRST page - points to the NEXT page
-    - NEXT page - points to itself
-    - Nodes - the building blocks of SmartForm
+- SmartForm  
+  - Global Settings  
+    - Form Attributes - specify output format, page format and SmartForm style  
+    - Form Interface - parameter interface through which data is exchanged with the print program, types have to be defined in the ABAP Dictionary  
+    - Global Definitions - define local, working variables such as those into which tables are going to be unpacked  
+  - Pages and Windows  
+    - FIRST page - points to the NEXT page  
+    - NEXT page - points to itself  
+    - Nodes - the building blocks of SmartForm  
 
-There can be more then two pages, but then their interaction becomes complicated.
+You can create more then two pages, but their interactions become complicated.  
 
 ### Nodes
 
-- Page - there will normally be only two pages, NEXT and FIRST
-  - Window - there can only be one Main Window, all other are either Secondary
-or Final
-    - Table - under table->details define a line type by defining the width of
-each column. Under data, specify which form interface table will be unpacked into
-which global definition local variable 
-      - Table line - set line type that you previously defined under
-table->details. This will generate cells, text elements into which you will be
-able to write
-    - Text element - write text. Variables will be printed if their name is
-sandwiched between & and the variable then appears on a gray background. If a
-text module by type, then you have to create the text module in transaction
-SMARTFORMS
-  - Graphic - define which picture you want to show. Upload a picture using
-transaction SE78
-  - Address - prints out ISO formatted data
-  - Other nodes - Template, Include Text type of Text element, Program lines,
-Command, Loop and Alternatives
+- Page - there will normally be only two pages, NEXT and FIRST  
+  - Window - there can only be one Main Window, all other are either Secondary or Final  
+    - Table - under table->details define a line type by defining the width of each column. Under data, specify which form interface table will be unpacked into which global definition local variable  
+      - Table line - set line type that you previously defined under table->details. This will generate cells, text elements into which you will be able to write  
+    - Text element - write text. Variables will be printed if their name is sandwiched between & and the variable then appears on a gray background. If a text module by type, then you have to create the text module in transaction SMARTFORMS  
+  - Graphic - define which picture you want to show. Upload a picture using transaction SE78  
+  - Address - prints out ISO formatted data  
+  - Other nodes - Template, Include Text type of Text element, Program lines, Command, Loop and Alternatives  
 
 ### Function module generation
 
-Generate function module: Activate SmartForm->Execute SmartForm
+Generate function module:  
+```
+Activate SmartForm
+Execute SmartForm 
+``` 
 
-You have to do this every time you make changes to the SmartForm.
+Do this every time you change a SmartForm.  
 
 ### Print Program
 
-The data type of the table that will be send to the SmartForm's function module
-has to be field for field exact as the importing parameter's type defined in the
-Form Interface.
+The data type of the table that will be send to the SmartForm's function module has to be field for field exact as the importing parameter's type defined in the Form Interface.  
 
-Select data with SQL.
+Select data with SQL.  
 
-Invoke 'SSF_FUNCTION_MODULE_NAME' and then invoke the function module.
+Invoke 'SSF_FUNCTION_MODULE_NAME' and then invoke the function module.  
 
 ### Testing
 
-SmartForm testing: Execute Print Program->OutputDevice=LP01->Print Preview
+SmartForm testing:  
+```
+Execute Print Program
+OutputDevice=LP01
+Print Preview  
+OR
+Execute SmartForm Function Module
+Give parameters data
+Execute Module
+OutputDevice=LP01
+Print Preview
+```
 
-or
-
-Execute SmartForm's Function Module->Give parameters data->Execute Module->
-OutputDevice=LP01->Print Preview
-
-You can cycle through the pages in the print preview using PageUp and PageDown.
+Use PageUp and PageDown in print preview to cycle through the pages.  
 
 ### Print program example
 

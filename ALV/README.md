@@ -1,12 +1,10 @@
 ## ALV
 
-ALV stands for ABAP List Viewer. It displays data in tabular form. ALV can sort data and export it to tidy
-data formats such as CSV.  
+ALV stands for ABAP List Viewer. It displays data in tabular form. ALV can sort data and export it to tidy data formats such as CSV.  
 
 ### ALV Function Module
 
-REUSE_ALV_LIST_DISPLAY is a function module which will display tables. Setting it up take a bit longer then
-using the ALV class.  
+REUSE_ALV_LIST_DISPLAY is a function module which will display tables. Setting it up take a bit longer then using the ALV class.  
 
 ### ALV Class
 

@@ -2,8 +2,7 @@
 
 Project Euler is an archive of hundreds upon hundreds of mathematical problems.  
 These problems can only be elegantly solved using an algorithm.  
-Beacuse of this, these problems are tailor made for learning the basic syntax of a language as well as for
-practicing code modularization.  
+Beacuse of this, these problems are tailor made for learning the basic syntax of a language as well as for practicing code modularization.  
 
 ### Solutions
 
