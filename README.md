@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="800" src="images/SAP.svg" alt="SAP logo"></a>
+  <img width="600" src="images/SAP.svg" alt="SAP logo"></a>
 </p>
 
 ## SAP
@@ -21,7 +21,7 @@ The programs are fine tuned using the SAP Implementation Guide (IMG). Unfortunat
 
 ### ABAP
 
-ABAP stands for Advanced Business Application Programming, a programming language similar to COBOL.
+ABAP stands for Advanced Business Application Programming, a programming language similar to COBOL.  
 SAP is almost exclusively written in ABAP.  
 Learning ABAP is quite difficult due to a lack of pedagogically sound, free tutorials. This is partly why I've decided to create this repository.  
 
