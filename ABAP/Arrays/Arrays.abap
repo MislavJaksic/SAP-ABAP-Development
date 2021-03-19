@@ -41,7 +41,7 @@ integer = 5.                             "|  1  |  2  |
 MODIFY int_table FROM integer INDEX 4.   "|  2  |  7  |
                                          "|  3  |  8  |
                                          "|  4  |  5  |
-SORT table.
+SORT int_table.
 
 LOOP AT int_table INTO integer.
   WRITE sy-tabix. "-> 1 2 3 4
