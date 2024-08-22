@@ -2,29 +2,41 @@
   <img width="600" src="images/SAP.svg" alt="SAP logo"></a>
 </p>
 
-## SAP
+> **Note**: This repository has been archived and is no longer actively maintained. It remains available in a read-only state for reference purposes.
 
-SAP stands for Systems, Applications and Products in Data Processing. It is also the name of the corporation that constructed the Enterprise Resource Planning (ERP) system of the same name.  
-Large and medium size corporations use ERP systems to make sure their business processes are effective and efficient.  
+## Overview
 
-The purpose of an ERP systems is to map the business processes such as finance, production planning, sales and distribution, material management and other onto a digital landscape.  
+SAP, which stands for *Systems, Applications, and Products in Data Processing*, is both the name of a corporation and the Enterprise Resource Planning (ERP) system developed by the company. ERP systems like SAP are crucial for ensuring that business processes across large and medium-sized organizations are efficient and effective.
 
-### SAP modules
+The primary purpose of an ERP system is to digitize and streamline various business processes, including finance, production planning, sales and distribution, material management, and more.
 
-SAP is divided into modules. Each module covers a single business process such as Finance(FI), Material Management(MM) or Sales and Distribution(SD).  
+## SAP Modules
 
-### SAP development and customization
+SAP is structured into several modules, each designed to handle specific business processes. Examples of these modules include:
 
-Businesses have very similar processes which is why they are already implemented as programs in SAP modules.  
-However, each business wants these modules fine tuned to their specific needs.  
-The programs are fine tuned using the SAP Implementation Guide (IMG). Unfortunately, some business requirements are so specific that the only way to implement them is to use a programming language called ABAP to construct a brand new program.  
+- **Finance (FI)**
+- **Material Management (MM)**
+- **Sales and Distribution (SD)**
 
-### ABAP
+Each module covers distinct functions within a business, enabling comprehensive management and integration of operations.
 
-ABAP stands for Advanced Business Application Programming, a programming language similar to COBOL.  
-SAP is almost exclusively written in ABAP.  
-Learning ABAP is quite difficult due to a lack of pedagogically sound, free tutorials. This is partly why I've decided to create this repository.  
+## SAP Development and Customization
 
-### Other tools
+While SAP modules provide standardized processes applicable to most businesses, companies often need to customize these modules to meet their unique requirements. Customization is typically managed through the SAP Implementation Guide (IMG), which allows businesses to fine-tune existing programs.
 
-SAP comes with a large selection of programming tools such as an Integrated Development Environment (IDE) of its own, graphical document editor called SmartForms, tools that allow SAP to connect and communicate with other system called ALE as well as a testing suite like eCATT.  
+However, in cases where a business's needs are particularly specific, custom development is required. This involves using the programming language ABAP to create new programs tailored to the organization's requirements.
+
+## ABAP
+
+ABAP, or *Advanced Business Application Programming*, is a programming language used almost exclusively within SAP. It shares similarities with COBOL and is the backbone of SAP's extensive functionality.
+
+Learning ABAP can be challenging due to the limited availability of free, well-structured tutorials. This repository was created to help bridge that gap.
+
+## Other SAP Tools
+
+SAP offers a wide range of programming and development tools to enhance and extend its capabilities, including:
+
+- **Integrated Development Environment (IDE)**
+- **SmartForms** (a graphical document editor)
+- **ALE** (tools for SAP to connect and communicate with other systems)
+- **eCATT** (a testing suite for SAP environments)
